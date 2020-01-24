@@ -12,9 +12,10 @@ class PostsController extends Controller
       if ($post->isPublished() || auth()->check()) {
 
         return view('posts.show', compact('post'));
-      }
+    }
 
-      abort(404);
+	return view('posts.show', compact('post'));
+      // abort(404); lo comente porque no podía ver el nuevo post que creaba y puse la linea de arriba
 
     }
 }

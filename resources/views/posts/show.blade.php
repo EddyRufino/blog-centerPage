@@ -4,26 +4,36 @@
 @section('meta-description', $post->excerpt)
 
 @section('content')
-  <article class="post container">
+  <article class="postShow container">
 
-      @include($post->viewType('home'));
+
 
     <div class="content-post">
 
-      @include('posts.header')
+    <h1 class="titleShow">{{ $post->title }}</h1>
 
-      <h1>{{ $post->title }}</h1>
-        <div class="divider"></div>
+    {{-- @include('posts.header') --}}
+    <div class="nameShow">
+      {{-- <div class="nameTitleShow"> --}}
+        <span class="c-grisShow"> {{ $post->owner->name }}</span>
+      {{-- </div> --}}
+      {{-- <div class="circle"> --}}
+        <img class="nameImg" src="/img/img-post-1.png" alt="">
+      {{-- </div> --}}
+    </div>
+
+
+        {{-- <div class="divider"></div> --}}
         <div class="image-w-text">
           {{-- <figure class="block-left"><img src="/img/img-post-2.png" alt=""></figure> --}}
-          {!! $post->body !!}
+          <p class="bodyShow read">{!! $post->body !!}</p>
         </div>
 
         <footer class="container-flex space-between">
 
           @include('partials.social-links', ['description' => $post->title])
 
-          @include('posts.tags')
+          {{-- @include('posts.tags') --}}
 
       </footer>
       <div class="comments">

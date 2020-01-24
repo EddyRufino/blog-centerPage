@@ -9,28 +9,28 @@
 
   @forelse ($posts as $post)
     <article class="post">
-
-      @include($post->viewType())
-
       <div class="content-post">
-
-        @include('posts.header')
 
         <h1>{{ $post->title }}</h1>
 
-        <div class="divider"></div>
+        @include('posts.header')
+
+        {{-- <div class="divider"></div> --}}
 
         <p>{{ $post->excerpt }}</p>
 
         <footer class="container-flex space-between">
             <div class="read-more">
                 {{-- <a href="blog/{{ $post->url }}" class="text-uppercase c-green">Leer más</a> --}}
-                <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">Leer más</a>
+                <a href="{{ route('posts.show', $post) }}" class="c-green">Leer más</a>
             </div>
 
             @include('posts.tags')
-
         </footer>
+      </div>
+
+      <div class="content-img">
+        @include($post->viewType())
       </div>
     </article>
 

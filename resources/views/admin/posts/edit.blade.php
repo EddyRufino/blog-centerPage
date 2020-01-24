@@ -52,10 +52,12 @@
             <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
               <label for="">Contenido de la publicación</label>
               <textarea rows="10" id="editor"
-                        name="body"
+                        name="body" data-sample-preservewhitespace
                         class="form-control"
                         placeholder="Ingresa el contenido completo de la publicación">
-                        {{ old('body', $post->body) }}</textarea>
+                        {{ old('body', $post->body) }}
+              </textarea>
+
               {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
             </div>
             <div class="form-group {{ $errors->has('iframe') ? 'has-error' : '' }}">
@@ -133,13 +135,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
   <link rel="stylesheet" href="/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="/adminlte/bower_components/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  {{-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> --}}
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+  {{-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet"> --}}
+
 @endpush
 
 @push('scripts')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+  {{-- <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script> --}}
+  <script src="https://cdn.ckeditor.com/4.12.1/standard-all/ckeditor.js"></script>
+  {{-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> --}}
   <script src="/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
   <script src="/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  {{-- <script charset="UTF-8"
+ src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script> --}}
+{{--
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script> --}}
 
   <script>
     //Date picker
@@ -151,8 +170,56 @@
       tags: true
     });
 
-    CKEDITOR.replace('editor');
-    CKEDITOR.config.height = 315;
+    // CKEDITOR.replace('editor');
+    // CKEDITOR.config.height = 315;
+    var config = {
+      extraPlugins: 'codesnippet',
+      codeSnippet_theme: 'monokai_sublime',
+      height: 356
+    };
+
+    CKEDITOR.replace('editor', config);
+    // $('#summernote').summernote({
+    //   placeholder: 'Hello bootstrap 4',
+    //   tabsize: 2,
+    //   height: 100
+    // });
+
+    // Quill
+    // var toolbarOptions = [
+    //   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    //   ['blockquote', 'code-block'],
+
+    //   [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    //   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    //   [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+    //   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    //   [{ 'direction': 'rtl' }],                         // text direction
+
+    //   [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    //   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+    //   [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+    //   [{ 'font': [] }],
+    //   [{ 'align': [] }],
+
+    //   ['clean']                                         // remove formatting button
+    // ];
+
+    // var editor = new Quill('#editor', {
+    //   modules: {
+    //     toolbar: toolbarOptions
+    //   },
+    //   theme: 'snow'
+    // });
+    // var editor = new Quill('#editor', {
+    //   modules: {
+    //     toolbar: toolbarOptions
+    //   },
+    //   theme: 'snow'
+    // });
+
+    //Fin Quill
 
     var myDropzone = new Dropzone('.dropzone', {
       url: '/admin/posts/{{$post->url}}/photos',

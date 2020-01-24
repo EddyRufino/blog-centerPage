@@ -2,26 +2,43 @@
   <div class="pure-menu"></div>
   <ul class="container-flex list-unstyled">
     <li>
-      <a href="{{ route('pages.home') }}" class="text-uppercase {{ setActiveRoute('pages.home') }}">
+      <a href="{{ route('pages.welcome') }}"
+        class="text-uppercase {{ setActiveRoute('pages.welcome') }}">
         Inicio
       </a>
     </li>
 
     <li>
-      <a href="{{route('pages.about')}}" class="text-uppercase {{ setActiveRoute('pages.about') }}">
+      <a href="{{route('pages.about')}}"
+        class="text-uppercase {{ setActiveRoute('pages.about') }}">
         Nosotros
       </a>
     </li>
 
     <li>
-      <a href="{{route('pages.archive')}}" class="text-uppercase {{ setActiveRoute('pages.archive') }}">
+      <a href="{{route('pages.archive')}}"
+        class="text-uppercase {{ setActiveRoute('pages.archive') }}">
         Archivo
       </a>
     </li>
 
     <li>
-      <a href="{{route('pages.contact')}}" class="text-uppercase {{ setActiveRoute('pages.contact') }}">
+      <a href="{{route('pages.contact')}}"
+        class="text-uppercase {{ setActiveRoute('pages.contact') }}">
         Contacto
+      </a>
+    </li>
+
+    <li>
+      <a href="{{ route('pages.home') }}"
+        class="text-uppercase" {{ setActiveRoute('pages.home') }}>
+        Blog
+      </a>
+    </li>
+
+    <li>
+      <a href="{{ route('register') }}" class="text-uppercase">
+        Ingresa
       </a>
     </li>
 

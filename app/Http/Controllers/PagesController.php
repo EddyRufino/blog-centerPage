@@ -60,4 +60,9 @@ class PagesController extends Controller
 
       return view('pages.contact');
     }
+
+  public function welcome()
+  {
+    return view('pages.welcome');
+  }
 }

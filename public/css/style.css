@@ -24,21 +24,40 @@ header nav li a:hover{
 	width: 150px;
 }
 
+.content-img {
+	width: 40%;
+	display: flex;
+}
+
+.postShow {
+	/*background: #fff;*/
+	/*box-shadow: 0px 0px 10px rgba(0,0,0,0.3);*/
+	/*box-shadow: 1px 0px 10px rgba(0,0,0,0.3);*/
+	margin-bottom: 25px;
+}
+
+.imgShow {
+	background-color: tomato;
+	opacity: .9;
+}
 
 .post{
 	background: #fff;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-	margin-bottom: 50px;
+	/*box-shadow: 0px 0px 10px rgba(0,0,0,0.3);*/
+	box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
+	margin-bottom: 25px;
+	display: flex;
 }
 .post .content-post{
 	position: relative;
-	padding: 65px 100px;
+	padding: 0px 20px 20px 20px;
+	width: 60%;
 }
 .post .category{
-	background: #1abc9c;
+	/*background: #1abc9c;*/
 	padding: 5px 10px;
-	color: white;
-	position: absolute;
+	color: #696969;
+	/*position: absolute;*/
     right: -11px;
     top: 30px;
     text-transform: capitalize;
@@ -51,9 +70,12 @@ header nav li a:hover{
 
 .post figure{
 	margin:0;
+	align-items: center; /* Si gustas quitalo*/
+	display: flex;
 }
 .post h1{
-	font-size: 40px;
+	font-size: 2em;
+	color: #cc7e85;
 }
 .post h2{
 	font-weight: normal;
@@ -66,7 +88,7 @@ header nav li a:hover{
 .post a{
 	text-decoration: none;
 	font-size: 20px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .post .tag{
 	margin: 0 5px;
@@ -337,3 +359,73 @@ img.img-responsive.img-list {
   height: 100%;
   background-color: rgba(0, 0, 0, .7);
 } */
+
+
+/* foto del escritor */
+
+.name {
+	display: flex;
+	align-items: center;
+}
+
+.circle {
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	/*background-color: black;*/
+}
+
+.nameImg {
+	background-size:cover;
+	background-position:center;
+	width:30px;
+	height:30px;
+	border-radius: 50px;
+}
+
+.iconPost {
+	display: block;
+	width:15px;
+	height:15px;
+	border-radius: 50px;
+	background-color: black;
+}
+
+.date {
+
+}
+
+.read {
+	display: flex;
+	align-items: center;
+}
+
+.nameIcon {
+	width: 16px;
+	height: 16px;
+	border-radius: 50px;
+	padding-top: 1px;
+}
+
+/* Style Show */
+
+.titleShow {
+	text-align: center;
+}
+
+.nameShow {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: -1rem;
+}
+
+.c-grisShow {
+	color: #696969;
+	padding-bottom: .5rem;
+}
+
+.postShow p {
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
