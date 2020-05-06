@@ -1,4 +1,4 @@
-<header class="container-flex space-between">
+<header class="container-flex space-between pb-2">
   {{-- <div class="date"> --}}
     <div class="name">
       <div class="circle">
@@ -13,11 +13,10 @@
         {{ optional($post->published_at)->format('M d') }}
       </span>
     </div>
-  <div class="read">
-    {{-- <img class="nameIcon" src="/img/read.png" alt=""> --}}
+  {{-- <div class="read">
     <img class="nameIcon" src="/img/read.png" alt="">
     <span class="c-gris">Leélo en 3 Min.</span>
-  </div>
+  </div> --}}
   {{-- </div> --}}
 
 

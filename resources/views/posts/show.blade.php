@@ -4,7 +4,7 @@
 @section('meta-description', $post->excerpt)
 
 @section('content')
-  <article class="postShow container">
+  <article class="mt-4 postShow container">
 
 
 

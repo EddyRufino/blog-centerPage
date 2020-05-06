@@ -25,7 +25,21 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+
+    /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        if (auth()->user()->hasRole(['Admin', 'Writer'])) {
+            return '/admin';
+        }
+
+        return '/';
+    }
+
 
     /**
      * Create a new controller instance.

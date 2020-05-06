@@ -10,7 +10,7 @@
 
     <div class="post-category">
       <span  class="category">
-        <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
+        <a class="text-muted" href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
       </span>
     </div>
 
